@@ -7,7 +7,7 @@ import Image from "react-bootstrap/Image";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
-import Media from "react-bootstrap/Media";
+
 
 const Movie = (props) => {
   const [movie, setMovie] = useState({
@@ -59,3 +59,5 @@ const Movie = (props) => {
     </div>
   );
 };
+
+export default Movie;
