@@ -7,6 +7,7 @@ import Image from "react-bootstrap/Image";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
+import moment from "moment";
 
 const Movie = (props) => {
   const [movie, setMovie] = useState({
@@ -55,9 +56,12 @@ const Movie = (props) => {
             <br></br>
             {movie.reviews.map((review, index) => {
               return (
-                <Media key={index}>
-                  <Media.Body>
-                    <h5>{review.name + " reviewed on " + review.date}</h5>
+                <Card key={index}>
+                  <Card.Body>
+                    <h5>
+                      {review.name + " reviewed on "}{" "}
+                      {moment(review.date).format("Do MMMM YYYY")}
+                    </h5>
                     <p>{review.review}</p>
                     {props.user && props.user.id === review.user_id && (
                       <Row>
@@ -77,8 +81,8 @@ const Movie = (props) => {
                         </Col>
                       </Row>
                     )}
-                  </Media.Body>
-                </Media>
+                  </Card.Body>
+                </Card>
               );
             })}
           </Col>
