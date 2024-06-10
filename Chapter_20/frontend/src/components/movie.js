@@ -16,7 +16,6 @@ const Movie = (props) => {
     rated: "",
     reviews: [],
   });
-
   const getMovie = (id) => {
     MovieDataService.get(id)
       .then((response) => {
@@ -27,10 +26,10 @@ const Movie = (props) => {
         console.log(e);
       });
   };
-
   useEffect(() => {
     getMovie(props.match.params.id);
   }, [props.match.params.id]);
+
   return (
     <div>
       <Container>
@@ -38,7 +37,6 @@ const Movie = (props) => {
           <Col>
             <Image src={movie.poster + "/100px250"} fluid />
           </Col>
-
           <Col>
             <Card>
               <Card.Header as="h5">{movie.title}</Card.Header>
@@ -93,3 +91,4 @@ const Movie = (props) => {
 };
 
 export default Movie;
+
