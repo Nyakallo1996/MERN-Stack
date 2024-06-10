@@ -27,7 +27,7 @@ const MoviesList = (props) => {
   }, [currentPage]);
 
   const retrieveMovies = () => {
-    MovieDataService.getAll()
+    MovieDataService.getAll(currentPage)
       .then((response) => {
         console.log(response.data);
         setMovies(response.data.movies);
