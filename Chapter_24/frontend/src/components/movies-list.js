@@ -24,6 +24,11 @@ const MoviesList = (props) => {
 
   useEffect(() => {
     retrieveMovies();
+    retrieveRatings();
+  })
+
+  useEffect(() => {
+    
     retrieveNextPage();
   }, [currentPage]);
 
