@@ -61,6 +61,13 @@ app.use(
   })
 );
 
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
-});
+mongoose
+  .connect(
+    `mongodb+srv://lekgoabamahlaks:yRDIG1EQC3T76FvD@cluster6.molmfpt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster6`
+  )
+  .then(() => {
+    app.listen(3000);
+  })
+  .catch(err => {
+    console.log(err);
+  });
