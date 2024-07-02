@@ -1,5 +1,5 @@
 {
-  "name": "graphql-react-event-booking",
+  "name": "chapter_1",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,18 +7,16 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
-  "author": "",
+  "author": "Nyakalllo Mahlakametsa",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "body-parser": "^1.18.3",
-    "express": "^4.16.4",
-    "express-graphql": "^0.7.1",
-    "graphql": "^14.0.2",
-    "jsonwebtoken": "^8.4.0",
-    "mongoose": "^5.3.15"
-  },
-  "devDependencies": {
-    "nodemon": "^1.18.7"
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.9.0",
+    "mongodb": "^6.8.0",
+    "mongoose": "^8.4.4",
+    "nodemon": "^3.1.4"
   }
 }
