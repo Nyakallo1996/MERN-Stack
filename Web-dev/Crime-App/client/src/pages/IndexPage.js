@@ -1,6 +1,6 @@
 import Post from "./post";
 
-export default function homePage() {
+export default function IndexPage() {
     return (
       <div>
         <Post />
@@ -8,4 +8,4 @@ export default function homePage() {
         <Post />
       </div>
     );
-} 
+}
