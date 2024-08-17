@@ -23,19 +23,23 @@ router.post("/register", async (req, res) => {
 });
 
 router.post("/login", async (req, res) => {
+  const { username, password } = req.body;
+
   const user = await UserModel.findOne({ username });
 
   if (!user) {
-    return res.json({ message: "User Doesn't Exist!" });
+    return res
+      .status(400)
+      .json({ message: "Username or password is incorrect" });
   }
-
-  const idPasswordValid = await bcrypt.compare(password, user.password);
-
+  const isPasswordValid = await bcrypt.compare(password, user.password);
   if (!isPasswordValid) {
-    return res.json({ message: "Username or Password Is Incorrect" });
+    return res
+      .status(400)
+      .json({ message: "Username or password is incorrect" });
   }
-
-  const token = jwt.sign();
+  const token = jwt.sign({ id: user._id }, "secret");
+  res.json({ token, userID: user._id });
 });
 
 export { router as userRouter };
